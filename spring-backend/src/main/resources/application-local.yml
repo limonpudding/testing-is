@@ -1,0 +1,12 @@
+spring:
+  mvc:
+    servlet:
+      path: /api
+  jackson:
+    mapper:
+      accept-case-insensitive-properties: true
+logging:
+  file:
+    max-history: 20
+auth:
+  salt: msv
