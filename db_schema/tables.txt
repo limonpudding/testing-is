@@ -1,0 +1,45 @@
+CREATE TABLE question (
+    id SERIAL PRIMARY KEY,
+    level varchar(10),
+    question_text varchar(600) NOT NULL,
+    answer1 varchar(150) NOT NULL,
+    answer2 varchar(150) NOT NULL,
+    answer3 varchar(150) NOT NULL,
+    answer4 varchar(150) NOT NULL,
+    answer1_comment varchar(600) NULL,
+    answer2_comment varchar(600) NULL,
+    answer3_comment varchar(600) NULL,
+    answer4_comment varchar(600) NULL,
+    correct_answer integer NOT NULL
+);
+
+insert into question (level, question_text, answer1, answer2, answer3, answer4, answer1_comment, answer2_comment, answer3_comment, answer4_comment, correct_answer)
+values (
+        'EASY',
+        'Что достаточно сделать с ненужными документами в офисе?',
+        'Выбросить в мусорку',
+        'Измельчить в шредере',
+        'Зачеркнуть исписанные страницы и использовать как черновик',
+        'Ничего не делать',
+        'Ненужные документы действительно нужно утилизировать, но если в них содержится служебная информация, то обычной мусорки недостаточно. Такие документы утилизируются с помощью специальных устройств (шредер).',
+        null,
+        'Некоторые совсем не важные документы действительно можно использовать как черновик, но служебные документы рекомендуется уничтожать с помощью специальных устройств – велика вероятность такой черновик забыть на рабочем месте или вообще вынести из офиса.',
+        null,
+        2
+       );
+
+insert into question (level, question_text, answer1, answer2, answer3, answer4, answer1_comment, answer2_comment, answer3_comment, answer4_comment, correct_answer)
+values (
+        'EASY',
+        'В каких случаях можно использовать на рабочем месте почтовый ящик на общедоступном почтовом сервере (например, mail.ru)?',
+        'Только для отправки срочных и важных писем',
+        'Если в письме нет конфиденциальной информации',
+        'Никогда не использовать',
+        'Только для отправки информации, предварительно архивированной и защищенной паролем',
+        null,
+        null,
+        null,
+        null,
+        3
+       );
+

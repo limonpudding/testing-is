@@ -1,4 +1,6 @@
-package ru.psu;
+package ru.psu.util;
+
+import com.fasterxml.jackson.annotation.JsonValue;
 
 public class TestParams {
 
@@ -8,6 +10,7 @@ public class TestParams {
 
     }
 
+    @JsonValue
     public Level getLevel() {
         return level;
     }

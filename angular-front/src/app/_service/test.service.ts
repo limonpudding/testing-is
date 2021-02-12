@@ -14,8 +14,6 @@ export class TestService {
 
   getTestData(level: string): Observable<TestData> {
     const href = '/api/test';
-    let testParams = new TestParams();
-    testParams.level = level;
-    return this._httpClient.post<TestData>(href, testParams);
+    return this._httpClient.post<TestData>(href, new TestParams(level));
   }
 }

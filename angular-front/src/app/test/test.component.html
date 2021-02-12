@@ -10,7 +10,7 @@
   <div *ngFor="let question of testData.questions">
     <div class="question-card-container">
       <mat-card class="question-card">
-        <mat-card-title>{{question.text}}</mat-card-title>
+        <mat-card-title>{{question.questionText}}</mat-card-title>
         <mat-card-content>
           <mat-radio-group aria-label="Выберите 1 ответ" class="radio-group">
             <mat-radio-button value="1" class="radio-button">{{question.answer1}}</mat-radio-button>
