@@ -1,45 +1,155 @@
-CREATE TABLE question (
-    id SERIAL PRIMARY KEY,
-    level varchar(10),
-    question_text varchar(600) NOT NULL,
-    answer1 varchar(150) NOT NULL,
-    answer2 varchar(150) NOT NULL,
-    answer3 varchar(150) NOT NULL,
-    answer4 varchar(150) NOT NULL,
-    answer1_comment varchar(600) NULL,
-    answer2_comment varchar(600) NULL,
-    answer3_comment varchar(600) NULL,
-    answer4_comment varchar(600) NULL,
-    correct_answer integer NOT NULL
+CREATE TABLE question
+(
+    id              SERIAL PRIMARY KEY,
+    level           varchar(10),
+    question_text   varchar(1000) NOT NULL,
+    answer1         varchar(200)  NOT NULL,
+    answer2         varchar(200)  NOT NULL,
+    answer3         varchar(200)  NOT NULL,
+    answer4         varchar(200)  NOT NULL,
+    answer1_comment varchar(1000) NULL,
+    answer2_comment varchar(1000) NULL,
+    answer3_comment varchar(1000) NULL,
+    answer4_comment varchar(1000) NULL,
+    correct_answer  integer       NOT NULL
 );
 
-insert into question (level, question_text, answer1, answer2, answer3, answer4, answer1_comment, answer2_comment, answer3_comment, answer4_comment, correct_answer)
-values (
-        'EASY',
+insert into question (level, question_text, answer1, answer2, answer3, answer4, answer1_comment, answer2_comment,
+                      answer3_comment, answer4_comment, correct_answer)
+values ('EASY',
         'Что достаточно сделать с ненужными документами в офисе?',
-        'Выбросить в мусорку',
-        'Измельчить в шредере',
-        'Зачеркнуть исписанные страницы и использовать как черновик',
-        'Ничего не делать',
+        'Выбросить в мусорку;',
+        'Измельчить в шредере;',
+        'Зачеркнуть исписанные страницы и использовать как черновик;',
+        'Ничего не делать;',
         'Ненужные документы действительно нужно утилизировать, но если в них содержится служебная информация, то обычной мусорки недостаточно. Такие документы утилизируются с помощью специальных устройств (шредер).',
         null,
         'Некоторые совсем не важные документы действительно можно использовать как черновик, но служебные документы рекомендуется уничтожать с помощью специальных устройств – велика вероятность такой черновик забыть на рабочем месте или вообще вынести из офиса.',
         null,
-        2
-       );
+        2);
 
-insert into question (level, question_text, answer1, answer2, answer3, answer4, answer1_comment, answer2_comment, answer3_comment, answer4_comment, correct_answer)
-values (
-        'EASY',
+insert into question (level, question_text, answer1, answer2, answer3, answer4, answer1_comment, answer2_comment,
+                      answer3_comment, answer4_comment, correct_answer)
+values ('EASY',
         'В каких случаях можно использовать на рабочем месте почтовый ящик на общедоступном почтовом сервере (например, mail.ru)?',
-        'Только для отправки срочных и важных писем',
-        'Если в письме нет конфиденциальной информации',
-        'Никогда не использовать',
-        'Только для отправки информации, предварительно архивированной и защищенной паролем',
+        'Только для отправки срочных и важных писем;',
+        'Если в письме нет конфиденциальной информации;',
+        'Никогда не использовать;',
+        'Только для отправки информации, предварительно архивированной и защищенной паролем;',
         null,
         null,
         null,
         null,
-        3
-       );
+        3);
 
+insert into question (level, question_text, answer1, answer2, answer3, answer4, answer1_comment, answer2_comment,
+                      answer3_comment, answer4_comment, correct_answer)
+values ('EASY',
+        'Вы отправили на печать список с информацией о клиентах. Принтер стоит в коридоре офисного здания, но вас отвлек коллега со срочной задачей. Как лучше поступить?',
+        'Выслушать коллегу, потом пойти за документами;',
+        'Если задача действительно очень срочная, попросить кого-нибудь забрать документы;',
+        'Никто из коллег не возьмет чужую распечатку – она им не нужна. Могу сходить позже или попросить кого-нибудь принести, потому что и сам иногда по просьбе коллег приношу им документы;',
+        'Попрошу коллегу подождать и заберу сначала документы;',
+        null,
+        null,
+        null,
+        null,
+        3);
+
+insert into question (level, question_text, answer1, answer2, answer3, answer4, answer1_comment, answer2_comment,
+                      answer3_comment, answer4_comment, correct_answer)
+values ('EASY',
+        'Какие пароли достаточно использовать для рабочих аккаунтов?',
+        'Что-то, что я точно не смогу забыть (связанное с именами или важными датами собственными или родственников/друзей);',
+        'Сложный набор букв и цифр в разном регистре. Держу их рядом с компьютером, чтобы не забыть;',
+        'Для разных аккаунтов – разные пароли. Храню их в менеджере паролей на компьютере;',
+        'Использую пароль, который предложит по умолчанию система;',
+        null,
+        null,
+        null,
+        null,
+        3);
+
+insert into question (level, question_text, answer1, answer2, answer3, answer4, answer1_comment, answer2_comment,
+                      answer3_comment, answer4_comment, correct_answer)
+values ('EASY',
+        'На рабочую почту Вам пришло письмо с незнакомого адреса с пометкой «Важно и просьбой посмотреть документ по ссылке. Каких действий достаточно?',
+        'Письмо удалю, по ссылке не пойду;',
+        'Раз письмо пришло на рабочую почту, а не на личную, то стоит открыть и посмотреть;',
+        'Перешлю письмо техническому специалисту, чтобы разобраться вместе;',
+        'Напишу ответное письмо с просьбой уточнить информацию;',
+        null,
+        null,
+        null,
+        null,
+        3);
+
+insert into question (level, question_text, answer1, answer2, answer3, answer4, answer1_comment, answer2_comment,
+                      answer3_comment, answer4_comment, correct_answer)
+values ('EASY',
+        'Вам необходимо поработать из дома, но для этого нужны конфиденциальные документы. Как следует поступить?',
+        'Скачаю необходимые документы и возьму с собой, нам обычно можно их брать;',
+        'Посоветуюсь с коллегами, если они берут – и я возьму;',
+        'Задержусь и поработаю с документами из офиса;',
+        'Уточню у своего руководителя, если можно взять – заберу домой;',
+        null,
+        null,
+        null,
+        null,
+        3);
+
+insert into question (level, question_text, answer1, answer2, answer3, answer4, answer1_comment, answer2_comment,
+                      answer3_comment, answer4_comment, correct_answer)
+values ('EASY',
+        'Вам позвонили из федеральной налоговой службы и попросили сообщить некоторую информацию о сотрудниках организации. Что следует сделать?',
+        'Отвечу, что такой информации у меня нет;',
+        'Попрошу, чтобы они приехали и обратились лично;',
+        'Предложу им сделать официальный запрос на e-mail предприятия;',
+        'Положу трубку и не буду вступать в разговор;',
+        null,
+        null,
+        null,
+        null,
+        3);
+
+insert into question (level, question_text, answer1, answer2, answer3, answer4, answer1_comment, answer2_comment,
+                      answer3_comment, answer4_comment, correct_answer)
+values ('EASY',
+        'Вам нужно установить необходимую для работы программу на рабочий компьютер. Как следует поступить?',
+        'Скачаю из интернета или принесу из дома, если она есть на домашнем компьютере;',
+        'Попрошу помочь знакомого, который разбирается в установке программ;',
+        'Напишу письмо-заявку руководителю;',
+        'Если что-то подобное уже устанавливал, то сделаю сам, иначе попрошу помощи у сисадминов;',
+        null,
+        null,
+        null,
+        null,
+        3);
+
+insert into question (level, question_text, answer1, answer2, answer3, answer4, answer1_comment, answer2_comment,
+                      answer3_comment, answer4_comment, correct_answer)
+values ('EASY',
+        'Вы уже ушли с работы и едете домой. Вам позвонил коллега и попросил помочь с решением срочной задачи. Что необходимо сделать?',
+        'Ответить, что сейчас Вы не можете ничем помочь;',
+        'Если у меня с собой есть ноутбук, то помочь;',
+        'Помочь в любом случае, коллегу можно консультировать по телефону;',
+        'У нас есть рабочий чат, попробовать помочь через него;',
+        null,
+        null,
+        null,
+        null,
+        1);
+
+insert into question (level, question_text, answer1, answer2, answer3, answer4, answer1_comment, answer2_comment,
+                      answer3_comment, answer4_comment, correct_answer)
+values ('EASY',
+        'Вы нашли флешку с логотипом предприятия, где Вы работаете. Что следует сделать?',
+        'Попробую ее открыть на своем домашнем компьютере и посмотрю, что там;',
+        'Отнесу в офис и отдам системным администраторам;',
+        'Попробую открыть на рабочем компьютере вместе с коллегами;',
+        'Выброшу ее;',
+        null,
+        null,
+        null,
+        null,
+        2);

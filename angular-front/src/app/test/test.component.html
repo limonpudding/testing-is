@@ -1,5 +1,4 @@
 <div class="container-tests">
-
   <div class="loading-shade"
        *ngIf="isLoading">
     <mat-spinner *ngIf="isLoading"></mat-spinner>
@@ -13,10 +12,26 @@
         <mat-card-title>{{question.questionText}}</mat-card-title>
         <mat-card-content>
           <mat-radio-group aria-label="Выберите 1 ответ" class="radio-group">
-            <mat-radio-button value="1" class="radio-button">{{question.answer1}}</mat-radio-button>
-            <mat-radio-button value="2" class="radio-button">{{question.answer2}}</mat-radio-button>
-            <mat-radio-button value="3" class="radio-button">{{question.answer3}}</mat-radio-button>
-            <mat-radio-button value="4" class="radio-button">{{question.answer4}}</mat-radio-button>
+            <mat-radio-button value="1" class="radio-button">
+              <span class="wrap-mat-radio-label">
+                {{question.answer1}}
+              </span>
+            </mat-radio-button>
+            <mat-radio-button value="2" class="radio-button">
+              <span class="wrap-mat-radio-label">
+                {{question.answer2}}
+              </span>
+            </mat-radio-button>
+            <mat-radio-button value="3" class="radio-button">
+              <span class="wrap-mat-radio-label">
+                {{question.answer3}}
+              </span>
+            </mat-radio-button>
+            <mat-radio-button value="4" class="radio-button">
+              <span class="wrap-mat-radio-label">
+                {{question.answer4}}
+              </span>
+            </mat-radio-button>
           </mat-radio-group>
         </mat-card-content>
         <mat-card-actions>
