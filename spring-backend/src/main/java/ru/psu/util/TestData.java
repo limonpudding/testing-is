@@ -1,8 +1,7 @@
 package ru.psu.util;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import ru.psu.dao.QuestionDaoImpl;
 import ru.psu.generated.tables.pojos.Question;
+import ru.psu.enums.Level;
 
 import java.util.List;
 

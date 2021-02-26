@@ -1,0 +1,28 @@
+<div class="main-container">
+  <div class="loading-shade"
+       *ngIf="isLoading">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <div class="rate-limit-reached" *ngIf="isLoading">
+      Ожидание
+    </div>
+  </div>
+  <div class="question-card-mobile">
+    <mat-card class="question-card">
+      <mat-card-title>{{question.questionText}}</mat-card-title>
+      <mat-card-content>
+        <mat-radio-group aria-label="Выберите 1 ответ" class="radio-group">
+          <div *ngFor="let answer of question.answers">
+            <mat-radio-button value="{{answer.id}}" class="radio-button">
+              <span class="wrap-mat-radio-label">
+                {{answer.answer}}
+              </span>
+            </mat-radio-button>
+          </div>
+        </mat-radio-group>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="accent" (click)="nextQuestion()">Ответить</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

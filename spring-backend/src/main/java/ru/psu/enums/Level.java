@@ -1,4 +1,4 @@
-package ru.psu.util;
+package ru.psu.enums;
 
 public enum Level {
     EASY("Лёгкий уровень"),

@@ -1,6 +1,6 @@
 import {Component, ViewChild, AfterViewInit} from '@angular/core';
 import {TestService} from "../_service/test.service";
-import {TestData} from "../_model/test-data";
+import {Test} from "../_model/test";
 import {Observable} from "rxjs";
 
 @Component({
@@ -11,7 +11,7 @@ import {Observable} from "rxjs";
 export class TestComponent implements AfterViewInit {
 
   isLoading = true;
-  testData = new TestData();
+  testData = new Test();
 
   constructor(private testService: TestService) {}
 

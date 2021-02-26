@@ -1,7 +1,7 @@
 CREATE TABLE question
 (
     id              SERIAL PRIMARY KEY,
-    level           varchar(10),
+    test_id         integer NOT NULL,
     question_text   varchar(1000) NOT NULL,
     answer1         varchar(200)  NOT NULL,
     answer2         varchar(200)  NOT NULL,
@@ -12,6 +12,22 @@ CREATE TABLE question
     answer3_comment varchar(1000) NULL,
     answer4_comment varchar(1000) NULL,
     correct_answer  integer       NOT NULL
+);
+
+CREATE TABLE
+(
+    id              SERIAL PRIMARY KEY,
+    name            varchar(200),
+    level           varchar(10),
+);
+
+create table APP_USER
+(
+    id SERIAL PRIMARY KEY,
+    login varchar(50),
+    password_hash varchar(50),
+    is_active boolean,
+    last_login_date timestamp(0)
 );
 
 insert into question (level, question_text, answer1, answer2, answer3, answer4, answer1_comment, answer2_comment,

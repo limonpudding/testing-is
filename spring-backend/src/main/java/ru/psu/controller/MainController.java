@@ -2,8 +2,9 @@ package ru.psu.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ru.psu.util.TestData;
-import ru.psu.util.TestDataService;
+import ru.psu.dao.QuestionDaoImpl;
+import ru.psu.dao.TestDaoImpl;
+import ru.psu.dto.TestDto;
 import ru.psu.util.TestParams;
 
 @RestController
@@ -11,11 +12,14 @@ import ru.psu.util.TestParams;
 public class MainController {
 
     @Autowired
-    TestDataService testDataService;
+    TestDaoImpl testDao;
+
+    @Autowired
+    QuestionDaoImpl questionDao;
 
     @PostMapping("/test")
     @ResponseBody
-    public TestData getTestData(@RequestBody TestParams testParams) {
-        return testDataService.collectTestDataByLevel(testParams.getLevel());
+    public TestDto getTestData(@RequestBody TestParams testParams) {
+        return testDao.getTestByLevel(testParams.getLevel().name());
     }
 }

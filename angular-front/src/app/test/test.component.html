@@ -12,26 +12,13 @@
         <mat-card-title>{{question.questionText}}</mat-card-title>
         <mat-card-content>
           <mat-radio-group aria-label="Выберите 1 ответ" class="radio-group">
-            <mat-radio-button value="1" class="radio-button">
+            <div *ngFor="let answer of question.answers">
+              <mat-radio-button value="1" class="radio-button">
               <span class="wrap-mat-radio-label">
-                {{question.answer1}}
+                {{answer.answer}}
               </span>
-            </mat-radio-button>
-            <mat-radio-button value="2" class="radio-button">
-              <span class="wrap-mat-radio-label">
-                {{question.answer2}}
-              </span>
-            </mat-radio-button>
-            <mat-radio-button value="3" class="radio-button">
-              <span class="wrap-mat-radio-label">
-                {{question.answer3}}
-              </span>
-            </mat-radio-button>
-            <mat-radio-button value="4" class="radio-button">
-              <span class="wrap-mat-radio-label">
-                {{question.answer4}}
-              </span>
-            </mat-radio-button>
+              </mat-radio-button>
+            </div>
           </mat-radio-group>
         </mat-card-content>
         <mat-card-actions>

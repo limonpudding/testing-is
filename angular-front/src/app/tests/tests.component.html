@@ -1,0 +1,21 @@
+<div class="main-container">
+  <div class="loading-shade"
+       *ngIf="isLoading">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <div class="rate-limit-reached" *ngIf="isLoading">
+      Ожидание
+    </div>
+  </div>
+
+  <div class="question-card-container">
+    <mat-card class="question-card">
+      <mat-card-title>Пройти тест по информационной безопасности организации:</mat-card-title>
+      <div *ngFor="let level of levels">
+        <mat-divider></mat-divider>
+        <div class="button-row">
+          <button mat-raised-button color="primary" class="button-wrapper" (click)="startExamination(level.name)">{{level.description}}</button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
